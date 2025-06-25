@@ -1,0 +1,73 @@
+JSM - Jednoduché Nástroje pro Maséry
+Vítejte v JSM, komplexním balíčku aplikací navržených pro efektivní a intuitivní správu masérny. Tento projekt vznikl z potřeby vytvořit praktické a přístupné řešení, které by překonalo omezení běžných kancelářských programů a CRM systémů.
+
+O projektu
+JSM je sada 4 komplexních HTML aplikací, které jsem vyvinul s pomocí umělé inteligence. Každá aplikace je šitá na míru specifickým potřebám masérů a je navržena s důrazem na jednoduchost, přehlednost a maximální přístupnost, zejména pro ovládání klávesnicí a pro práci se čtečkami obrazovky.
+
+Pro koho je JSM určeno?
+Projekt JSM je primárně určen pro maséry a živnostníky, kteří hledají spolehlivé, offline a uživatelsky přívětivé nástroje pro správu svého podnikání. Díky svému designu je obzvláště vhodný pro uživatele se zrakovým postižením, kteří ocení vysoký kontrast a plnou podporu klávesnicové navigace.
+
+Klíčové vlastnosti
+Kompletní správa masérny (Masérna): Centrální aplikace pro správu klientů, masáží, ceníku a dárkových poukazů. 
+
+Komplexní finanční správa (Finanční správce): Integrovaná aplikace pro sledování příjmů, výdajů a správu skladu masérny. 
+
+Centrální záznamník (Záznamník): Jednotná aplikace pro správu poznámek, to-do úkolů, plánovaných událostí a nápadů. 
+
+Generování poukazů a QR kódů (Generátor): Kombinovaný nástroj pro vizuální tvorbu dárkových poukazů a rychlé generování QR kódů. 
+
+Offline funkčnost a plná kontrola nad daty: JSM funguje kompletně offline na vašem počítači. Veškerá data jsou ukládána ve formátu JSON souborů, což vám dává absolutní kontrolu nad jejich exportem, importem a zálohováním. Žádná data se neukládají na server, žádné přihlašovací stránky.
+
+Maximální přístupnost: Celý projekt je navržen s ohledem na zrakové omezení. To znamená vysoký kontrast, velké a čitelné písmo, a plnou podporu klávesnicové navigace a čteček obrazovky.
+
+Lehké a univerzální: S pouhými 80 KB je JSM neuvěřitelně malé a rychlé. Můžete ho používat na jakémkoli zařízení, které má webový prohlížeč – Windows, macOS, Linux, Android i iOS.
+
+Struktura projektu
+Projekt je organizován do hlavní složky JSM, která obsahuje:
+
+Data/: Obsahuje veškeré aplikace (1. Aplikace/) a dokumentaci (2. Návody/), a také místo pro vaše json data/ a Zálohy json/.
+
+1. Aplikace/: Obsahuje čtyři hlavní HTML aplikace (01. maserna.html, 02. financni-spravce.html, 03. zaznamnik.html, 04. generator.html).
+
+2. Návody/: Obsahuje kompletní návod k použití (01. navod-k-pouziti.html) a návod pro přidávání aplikací (02. navod-pridavani-aplikace.html).
+
+3. json data/: Složka pro ukládání vašich JSON dat, s podsložkou pro Zálohy json/.
+
+LICENSE (Licenční soubor - Apache License 2.0).
+
+index.html (Hlavní dashboard pro spuštění Mstudia).
+
+čti mě.txt (Tento soubor s informacemi o projektu).
+
+Jak začít?
+JSM je k dispozici jako zip soubor. Zkopírujte si ho na místo, kde ho chcete mít (například do dokumentů nebo na plochu). Rozbalte zip archiv. Ve složce, kde jste ho rozbalili, se bude nyní nacházet složka s názvem JSM. V ní naleznete vše potřebné.
+
+Pro spuštění otevřete soubor index.html, a to přímo ve složce JSM. Tím se vám otevře stránka s dashboardem.
+
+Dashboard vám nabídne přehledný seznam všech aplikací. Pro navigaci použijte klávesu Tab a pro spuštění aplikace Enter.
+
+Pro detailní instrukce k používání jednotlivých aplikací klikněte na odkaz "Kompletní návod k použití" v sekci "Návody" na dashboardu.
+
+JSM můžete rozběhnout obrazně řečeno i na kalkulačce. Aplikace jsou jednoduché, malé a nezabírají moc místa. Nezáleží na tom, na jakém systému je budete používat. Můžete je používat na všem, co má webový prohlížeč – Windows, macOS, Linux, Android i iOS. Jen si průběžně ukládejte JSON soubory, ať nepřijdete o žádná data.
+
+Upozornění: Použití Mstudia na mobilních zařízeních
+Pokud budete používat JSM na mobilu (Android, iOS), je důležité vědět, že aplikace nelze spouštět přímo z dashboardu (index.html), pokud je celý projekt otevřen lokálně z disku.
+
+Proč se to děje (laicky řečeno):
+
+Když otevřete HTML soubor přímo z disku na počítači, prohlížeč má volný přístup k dalším souborům ve stejné složce (nebo podsložkách). Na mobilu a v jejich prohlížečích jsou ale bezpečnostní pravidla mnohem přísnější. Mobilní operační systémy a prohlížeče často považují lokální soubory za "izolované" a nechtějí jim dovolit otevírat jiné lokální soubory z bezpečnostních důvodů. Je to jako byste měli každý soubor v malé, oddělené krabičce a nemohly se navzájem "vidět". Proto se dashboard sice spustí, ale odkazy na další aplikace už nefungují, protože prohlížeč jim nedovolí k těm souborům přistoupit.
+
+Řešení pro mobilní použití:
+
+Na mobilu budete muset jednotlivé aplikace spouštět přímo z jejich souborů v kategorii Data/1. Aplikace/ (např. Data/1. Aplikace/01. maserna.html), nikoli přes dashboard.
+
+Open Source a spolupráce
+JSM je open source projekt. To znamená, že je volně dostupný k použití, úpravám a sdílení. Mým cílem je pomoci ostatním masérům, zejména těm se zrakovým postižením, efektivně spravovat své podnikání. Je možné, že v budoucnu přibydou další aplikace. Pokud ano, budu je s vámi sdílet a poskytnu podrobný návod, jak si je přidat do dashboardu. Kdybyste i vy vytvořili nějakou aplikaci, tak ji sdílejte s ostatními, ať si každý může rozšířit svoji sbírku.
+
+Vaše návrhy na vylepšení, připomínky či konstruktivní kritika jsou velmi vítány. Neváhejte mě kontaktovat, pokud máte dotazy nebo nápady, jak JSM dále zlepšit.
+
+Kontakt
+Jan Šimek
+E-mail: Simek.jan1@gmail.com
+
+Děkuji za váš zájem o JSM!
