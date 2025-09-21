@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSM - Rozcestník</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Vlastní styly pro vysoký kontrast a lepší čitelnost */
+        body {
+            background-color: #000;
+            font-family: 'Inter', sans-serif;
+            color: #fff;
+            padding: 1rem;
+        }
+        .container {
+            max-width: 4xl;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #111; /* Tmavší pozadí pro lepší kontrast */
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #facc15;
+            font-size: 4rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 10px rgba(250, 204, 21, 0.4);
+        }
+        h2 {
+            color: #facc15;
+            font-size: 1.75rem;
+            font-weight: bold;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #555;
+            padding-bottom: 0.5rem;
+        }
+        .app-link {
+            display: block;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1rem;
+            background-color: #fff; /* Bílé pozadí tlačítka */
+            color: #1a1a1a; /* Tmavý text */
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-size: 1.5rem; /* Zvětšeno pro lepší čitelnost */
+            font-weight: 600;
+            transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        .app-link:hover {
+            background-color: #f0f0f0; /* Lehce světlejší šedá při najetí */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+        .app-link:focus {
+            outline: 2px solid #facc15;
+            outline-offset: 2px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        kbd {
+            background-color: #2d3748;
+            color: #f7fafc;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-family: monospace;
+            font-size: 0.875rem;
+        }
+
+        /* Styly pro video */
+        .video-container {
+            margin-top: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .video-container video {
+            width: 100%;
+            max-width: 768px; /* Omezení šířky videa pro větší obrazovky */
+            border-radius: 0.5rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            border: 2px solid #333;
+        }
+
+        /* Responzivní úpravy */
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            .app-link {
+                font-size: 1.25rem;
+                padding: 1rem 1.5rem;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container">
+        <h1 class="text-5xl font-extrabold text-center text-yellow-300 mb-6 mt-8">JSM</h1>
+        
+        <p class="text-lg text-gray-300 text-center mb-12 leading-relaxed">
+            Vítejte v **JSM, jednoduchém systému pro maséry**.
+            <br><br>
+            Pro navigaci použijte klávesu <kbd>Tab</kbd> pro přesun mezi aplikacemi.
+            Stiskněte <kbd>Enter</kbd> pro spuštění vybrané aplikace.
+        </p>
+
+        <div class="space-y-4">
+            <a href="data/000._dokumentace.html" class="app-link" aria-label="Spustit dokumentaci">
+                📖 Dokumentace
+            </a>
+            <a href="Data/001._maserna.html" class="app-link" aria-label="Spustit Masérnu">
+                💪 Masérna
+            </a>
+            <a href="Data/002._financni-spravce.html" class="app-link" aria-label="Spustit Finančního správce">
+                💰 Finanční správce
+            </a>
+            <a href="Data/003._pracovni_zaznamnik.html" class="app-link" aria-label="Spustit Pracovní záznamník">
+                📝 Pracovní záznamník
+            </a>
+        </div>
+
+        <div class="video-container">
+            <h2 class="text-2xl font-bold text-center">Video prezentace JSM</h2>
+            <p class="text-md text-gray-400 text-center mb-4">
+                Chcete vědět, co JSM umí? Podívejte se na krátkou prezentaci.
+            </p>
+            <video controls aria-label="Video prezentace systému JSM">
+                <source src="media/prezentace.mp4" type="video/mp4">
+                Váš prohlížeč nepodporuje přehrávání videa.
+            </video>
+        </div>
+        
+    </div>
+</body>
+</html>

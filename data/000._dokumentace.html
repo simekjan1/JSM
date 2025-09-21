@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSM - Dokumentace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Vlastní styly pro vysoký kontrast a lepší čitelnost */
+        body {
+            background-color: #000;
+            font-family: 'Inter', sans-serif;
+            color: #fff;
+            padding: 1rem;
+        }
+        .container {
+            max-width: 4xl;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #111; /* Tmavší pozadí pro lepší kontrast */
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #facc15;
+            font-size: 4rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 10px rgba(250, 204, 21, 0.4); /* Jemný stín pro zvýraznění */
+        }
+        h2 {
+            color: #facc15;
+            font-size: 1.75rem;
+            font-weight: bold;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #555;
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            font-size: 1.125rem;
+            font-weight: bold;
+            color: #e2e8f0;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        img {
+            display: block;
+            margin: 1.5rem auto;
+            max-width: 100%;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid #2a2a2a;
+        }
+
+        /* Styly pro odkazy aplikací - Nový styl */
+        .app-link {
+            display: block;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1rem;
+            background-color: #fff; /* Bílé pozadí tlačítka */
+            color: #1a1a1a; /* Tmavý text */
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-size: 1.5rem; /* Zvětšeno pro lepší čitelnost */
+            font-weight: 600;
+            transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        .app-link:hover {
+            background-color: #f0f0f0; /* Lehce světlejší šedá při najetí */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+        .app-link:focus {
+            outline: 2px solid #facc15;
+            outline-offset: 2px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Styly pro rozbalovací pole */
+        details {
+            background-color: #1c1c1c;
+            border-radius: 0.5rem;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid #2a2a2a;
+        }
+        details summary {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #facc15;
+            cursor: pointer;
+            outline: none;
+        }
+        details summary:focus {
+            outline: 2px solid #facc15;
+            outline-offset: 2px;
+        }
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+        details summary::before {
+            content: "▶";
+            display: inline-block;
+            margin-right: 0.5rem;
+            font-size: 0.9em;
+            color: #e2e8f0;
+            transition: transform 0.2s;
+        }
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+        details p, details li {
+            font-size: 1rem;
+            color: #cbd5e0;
+            line-height: 1.6;
+        }
+        details ul li {
+            margin-bottom: 0.5rem;
+        }
+        kbd {
+            background-color: #2d3748;
+            color: #f7fafc;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-family: monospace;
+            font-size: 0.875rem;
+        }
+        .check-icon {
+            color: #22c55e;
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+        .x-icon {
+            color: #ef4444;
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+
+        /* Responzivní úpravy */
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            .app-link {
+                font-size: 1.25rem;
+                padding: 1rem 1.5rem;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container">
+        <h1 class="text-5xl font-extrabold text-center text-yellow-300 mb-6 mt-8">JSM - Dokumentace</h1>
+        
+        <details>
+            <summary aria-label="Rozbalovací pole: O projektu JSM">📖 O projektu JSM</summary>
+            <p class="text-lg text-gray-300 text-center mb-12 leading-relaxed">
+                Vítejte v dokumentaci k **JSM, jednoduchému systému pro maséry**. JSM je offline webová aplikace, která běží přímo ve vašem prohlížeči. Ideální řešení pro maséry, kteří chtějí mít všechna data v bezpečí, a přitom snadno po ruce.
+            </p>
+
+            <h2>Proč si JSM zamilujete?</h2>
+            <h3>💾 Vše na jednom místě</h3>
+            <p>Už žádné listování v diáři, hledání poznámek v sešitu a účetnictví v Excelu. JSM propojuje všechny informace o klientech, jejich masážích, platbách a vašich nápadech do jednoho systému. Šetříte čas a máte jistotu, že na nic nezapomenete.</p>
+            
+            <h3>🔒 Bezpečně u vás</h3>
+            <p>Na rozdíl od online rezervačních systémů vaše citlivá data klientů nikdy neopustí váš počítač. Všechno máte pod plnou kontrolou. A hlavně – JSM funguje i když zrovna nejde internet. Žádný výpadek vás tak nezaskočí.</p>
+            
+            <h3>✅ Maximální jednoduchost</h3>
+            <p>Systém je navržený tak, aby byl intuitivní a přímočarý. Nemusíte být technik, abyste JSM používali. Jednoduše ho rozbalíte a začnete pracovat. Vše je jasné a přehledné od prvního kliknutí.</p>
+
+            <h2>Řešíme vaše problémy, ne jen funkce</h2>
+            <p>JSM není jen soubor nástrojů. Je to řešení pro vaše každodenní starosti. Pojďme se podívat, jak vám JSM pomůže:</p>
+            <ul>
+                <li><span class="x-icon">❌</span> <p>Ztrácíte čas hledáním poznámky o klientovi v různých sešitech?</p></li>
+                <li><span class="check-icon">✅</span> <p>V JSM najdete celou historii masáží a poznámek o klientovi během pár vteřin. Konec listování v papírovém diáři.</p></li>
+                <li><span class="x-icon">❌</span> <p>Nejste si jistí, které služby vám nejvíc vydělávají?</p></li>
+                <li><span class="check-icon">✅</span> <p>Finanční modul vám dá okamžitý přehled příjmů a výdajů podle služeb. Bez složitého Excelu.</p></li>
+                <li><span class="x-icon">❌</span> <p>Máte super nápady na vylepšení, ale zapomenete je, než je stihnete zapsat?</p></li>
+                <li><span class="check-icon">✅</span> <p>Záznamník vám pomůže nápady nejen uložit, ale i přetvořit v úkoly nebo rovnou do ceníku. Vše je propojené.</p></li>
+            </ul>
+        </details>
+        
+        <details>
+            <summary aria-label="Rozbalovací pole: Jak začít?">🔑 Jak začít?</summary>
+            <h3>Spuštění JSM krok za krokem</h3>
+            <p>JSM je k dispozici jako **zip soubor**. Stačí si ho stáhnout a rozbalit do složky ve vašich dokumentech nebo na ploše. Vznikne vám složka s názvem <code>JSM</code>.</p>
+            <p>Pro spuštění JSM stačí otevřít soubor <code>index.html</code> ve vašem webovém prohlížeči (např. Google Chrome, Firefox, Edge). Tím se vám otevře hlavní stránka s rozcestníkem, ze které můžete spouštět jednotlivé moduly.</p>
+            <p>Pro navigaci mezi moduly použijte klávesu <kbd>Tab</kbd> pro přesun mezi odkazy a <kbd>Enter</kbd> pro spuštění vybraného modulu.</p>
+        </details>
+        
+        <details>
+            <summary aria-label="Rozbalovací pole: Přehled modulů">📖 Přehled modulů</summary>
+            <p>JSM je rozdělen na tři hlavní moduly, které vám pomohou s různými aspekty vašeho podnikání.</p>
+            
+            <h3>Modul Masérna: Správa klientů a masáží.</h3>
+            <p>Tento modul je srdcem celého systému. Pomůže vám udržet si přehled o vašich klientech, jejich masážích, platbách a dárkových poukazech.</p>
+            <p>
+                **Příklad použití:** **Paní Nováková** přijde na masáž zad. V modulu Masérna jednoduše najdete její kartu, přidáte novou masáž, vyberete metodu "Klasická masáž zad" a zadáte cenu. Vše se automaticky uloží, aktualizuje se historie masáží paní Novákové a do modulu Finance se odešle záznam o příjmu.
+            </p>
+            <img src="images/001._maserna.png" alt="Hlavní obrazovka modulu Masérna" style="max-width: 100%; height: auto;">
+
+            <h3>Modul Finanční správce: Přehled nad příjmy a výdaji.</h3>
+            <p>Slouží jako jednoduché účetnictví a inventář v jednom. Zaznamenává příjmy i výdaje a umožňuje snadno sledovat finanční bilanci. Data z modulu Masérna se do něj automaticky propisují.</p>
+            <p>
+                **Příklad použití:** Chcete zkontrolovat, jak jste na tom finančně za poslední měsíc. Jednoduše otevřete modul Finanční správce, kde okamžitě vidíte celkový přehled příjmů a výdajů. Zároveň si můžete zkontrolovat stav zásob, například kolik máte na skladě masážního oleje.
+            </p>
+            <img src="images/002._financni_spravce.png" alt="Hlavní obrazovka modulu Finanční správce" style="max-width: 100%; height: auto;">
+            
+            <h3>Modul Záznamník: Vše na jednom místě.</h3>
+            <p>Už žádné zbytečné aplikace! Tento modul vám pomůže utřídit si myšlenky a udržet pořádek ve vašich poznámkách, nápadech, událostech a úkolech.</p>
+            <p>
+                **Příklad použití:** Během rozhovoru s klientem vás napadne, že by bylo skvělé zařadit do nabídky novou masáž. Rychle si to zapíšete do Záznamníku jako **nápad**. Později můžete tento nápad jedním kliknutím přetvořit na úkol v To-Do listu nebo ho rovnou odeslat do ceníku v Masérně.
+            </p>
+            <img src="images/003._pracovni_zaznamnik.png" alt="Hlavní obrazovka modulu Záznamník" style="max-width: 100%; height: auto;">
+        </details>
+        
+        <details>
+            <summary aria-label="Rozbalovací pole: Ukládání a správa dat">🗃 Ukládání a správa dat</summary>
+            <h3>Jak funguje ukládání?</h3>
+            <p>JSM pro ukládání dat využívá moderní webovou technologii, která funguje jako **lokální databáze přímo ve vašem prohlížeči (IndexedDB)**. Vaše data se ukládají automaticky po každé změně, a jsou díky tomu vždy aktuální a v bezpečí.</p>
+            
+            <h3>Proč bych měl/a data zálohovat?</h3>
+            <p>I přesto, že se data ukládají automaticky, důrazně doporučujeme pravidelně provádět **manuální export** dat do JSON souboru (tato možnost je dostupná v každém modulu). Důvodem je, že lokální databáze je vázána na konkrétní prohlížeč a jeho profil. Pokud byste přeinstalovali systém, změnili prohlížeč nebo by se poškodil váš uživatelský profil, data byste mohli ztratit.</p>
+            <p>Manuální export je spolehlivá záloha pro tyto případy. Modul **Masérna** vám navíc nenápadně připomene, že je čas na zálohu, pokud od poslední uplynulo více než 7 dní.</p>
+            
+            <h3>Propojení dat mezi moduly</h3>
+            <p>Aplikace **Masérna** a **Finanční správce** jsou chytře propojeny. Když v Masérně přidáte masáž nebo prodej poukazu, automaticky se do Finančního správce odešle finanční transakce (příjem) s danou částkou.</p>
+        </details>
+        
+        <details>
+            <summary aria-label="Rozbalovací pole: Přístup a omezení">📱 Přístup a omezení</summary>
+            <p>JSM je offline webová aplikace, která funguje ve všech moderních prohlížečích (Chrome, Firefox, Edge) na operačních systémech **Windows, macOS** a **Linux**.</p>
+            <h3>Mobilní zařízení</h3>
+            <p>JSM je primárně navržen pro počítače a notebooky, kde funguje spolehlivě a bez problémů. Na mobilních telefonech a tabletech může mít omezené funkce. Důvodem je, že mobilní prohlížeče pracují s lokálními soubory trochu odlišně než počítačové prohlížeče. Pro co nejlepší funkčnost na mobilních zařízeních doporučujeme otevírat moduly přímo z podsložky <code>Data/</code>, nikoli přes rozcestník <code>index.html</code>.</p>
+            <h3>Přístupnost</h3>
+            <p>JSM je vyvíjen s důrazem na přístupnost pro uživatele se zrakovým postižením. Systém je navržen tak, aby se dal ovládat i klávesnicí. Například se po stránce můžete pohybovat pomocí klávesy <kbd>Tab</kbd> a potvrzovat akce klávesou <kbd>Enter</kbd>.</p>
+        </details>
+        
+        <details>
+            <summary aria-label="Rozbalovací pole: Multimédia">🎬 Multimédia</summary>
+            <p class="text-gray-300 text-center mb-6">Pro lepší přehled a pochopení JSM si můžete pustit video prezentaci nebo poslechový podcast o projektu.</p>
+            
+            <h3>Video prezentace JSM</h3>
+            <div class="video-container flex justify-center mb-8">
+                <video controls aria-label="Video prezentace systému JSM" class="w-full max-w-2xl rounded-md shadow-lg border border-gray-700">
+                    <source src="../media/prezentace.mp4" type="video/mp4">
+                    Váš prohlížeč nepodporuje přehrávání videa.
+                </video>
+            </div>
+            
+            <h3>Podcast o JSM</h3>
+            <p class="text-center mb-4 text-gray-400">Neformální rozhovor o tom, jak JSM vznikl a proč je skvělým řešením pro každého maséra.</p>
+            <div class="audio-container flex justify-center">
+                <audio controls aria-label="Audio záznam podcastu o JSM" class="w-full max-w-2xl">
+                    <source src="../media/podcast.mp4" type="audio/mp4">
+                    Váš prohlížeč nepodporuje přehrávání zvuku.
+                </audio>
+            </div>
+        </details>
+
+        <details>
+            <summary aria-label="Rozbalovací pole: Struktura a licence">🗂 Struktura a licence</summary>
+            <p>JSM je organizován do hlavní složky, která obsahuje:</p>
+            <ul>
+                <li><code>index.html</code> – hlavní rozcestník.</li>
+                <li><code>000._dokumentace.html</code> - komplexní dokumentace systému.</li>
+                <li><code>Data/</code> – složka s jednotlivými moduly.
+                    <pre><code>
+JSM/
+├── Data/
+│   ├── 001._maserna.html
+│   ├── 002._financni-spravce.html
+│   └── 003._pracovni_zaznamnik.html
+├── images/
+│   ├── 001._maserna.png
+│   ├── 002._financni_spravce.png
+│   └── 003._pracovni_zaznamnik.png
+├── media/
+│   ├── prezentace.mp4
+│   └── podcast.mp4
+├── 000._dokumentace.html
+└── index.html
+                    </code></pre>
+                </li>
+            </ul>
+            <p>Celý projekt JSM je **open-source** a je k dispozici na GitHubu pod licencí **Apache 2.0**. Můžete si ho stáhnout, používat, nebo dokonce upravit a vylepšit podle svých potřeb. Jen mějte na paměti, že pokud si projekt stáhnete z jiného než oficiálního zdroje, nemůžeme zaručit jeho bezpečnost a integritu.</p>
+            <p>Oficiální repozitář: <a href="https://github.com/simekjan1/JSM" class="text-blue-400 hover:text-blue-200 underline">https://github.com/simekjan1/JSM</a></p>
+        </details>
+
+<details>
+    <summary aria-label="Rozbalovací pole: Něco málo od autora">📝 Něco málo od autora</summary>
+    <h2>Ahoj, jsem Honza, autor projektu JSM</h2>
+    <p>Od roku 2012 se živím jako masér. Je to práce, která mě baví a naplňuje. Celý život žiji se zbytky zraku, což mi ale nebrání žít plnohodnotný život, a jak vidíte, ani tvořit vlastní software.</p>
+
+    <h2>Příběh JSM aneb Jak se zrodil systém pro maséry</h2>
+    <p>Dlouho jsem marně hledal systém pro správu masérny, který by byl plně přístupný pro zrakově postižené a nevidomé. Vyzkoušel jsem jich asi dvacet a pokaždé mě čekalo zklamání. Z původní euforie se nakonec stala frustrace a já se vrátil k Excelu. To ale nebylo ono. Potřeboval jsem něco efektivnějšího a spolehlivějšího. Vytvořil jsem detailní popis mého vysněného systému a poslal ho několika vývojářům, ale nikdo se neozval.</p>
+    <p>Řekl jsem si, že to vezmu do svých rukou a vytvořím si ho sám. Jediný problém? Programování rozumím jako koza petrželi! A tak mě napadlo využít umělou inteligenci. Začal jsem s ChatGPT, pak přesedlal na Gemini a nakonec si vytvořil parťáka na míru. Já jsem byl mozek projektu a AI asistent Max se staral o programování. Já jsem zase testoval a hlásil chyby. Večer co večer jsme společně tvořili, propojovali moduly a ladili detaily.</p>
+
+    <h2>JSM v mém životě a budoucnost projektu</h2>
+    <p>Po zhruba čtvrt roce práce je JSM hotový a denně ho používám. Neuvěřitelně mi usnadnil administrativu a ušetřil spoustu času. Místo večerního papírování si teď jen nahraji denní masáže a výdaje a zbytek času se mohu věnovat věcem, které mě baví. Je to projekt, na kterém mi opravdu záleží.</p>
+    <p>A i když je JSM plně funkční, to neznamená, že je bezchybný. Proto bych vás chtěl poprosit: **Používejte ho, testujte a hrajte si s ním.** Pokud narazíte na jakoukoliv chybu nebo vás napadne, co by se dalo vylepšit, dejte mi prosím vědět. Chci kolem JSM vytvořit komunitu, která mi pomůže projekt posouvat dál. JSM nemusí vyhovovat každému, ale jsem otevřený jakýmkoliv nápadům a zpětné vazbě. Pokud to půjde, rád vaše nápady zapracuji.</p>
+</details>        
+
+<details>
+    <summary aria-label="Rozbalovací pole: Poznámka k dokumentaci">📜 Poznámka k dokumentaci</summary>
+    <p>Tuto dokumentaci jsem tvořil s velkým nasazením, aby poskytla co nejpřesnější a nejpřehlednější informace o projektu. I když to pro mě byla velká výzva, doufám, že vám pomůže se v JSM rychle zorientovat.</p>
+    <p>Jelikož je JSM mým prvním projektem, berte prosím tuto dokumentaci jako průvodce, který se bude s projektem vyvíjet. Pokud objevíte chybu nebo máte návrh na vylepšení, budu rád, když mi dáte vědět.</p>
+</details>
+
+    </div>
+
+    <script>
+        // Tato část je prázdná, protože veškerá logika databáze
+        // a propojení se nyní nachází přímo v jednotlivých modulu.
+        // Soubor index.html slouží pouze jako rozcestník.
+    </script>
+</body>
+</html>
